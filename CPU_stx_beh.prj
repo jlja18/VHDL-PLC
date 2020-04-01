@@ -1,0 +1,6 @@
+vhdl isim_temp "InputSelectInvert.vhd"
+vhdl isim_temp "AluFunctionBlock.vhd"
+vhdl isim_temp "Registers.vhd"
+vhdl isim_temp "Instruction_Decoder.vhd"
+vhdl isim_temp "ALU.vhd"
+vhdl isim_temp "CPU.vhd"

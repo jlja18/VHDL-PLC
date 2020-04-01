@@ -1,0 +1,6 @@
+vhdl work "InputSelectInvert.vhd"
+vhdl work "AluFunctionBlock.vhd"
+vhdl work "Registers.vhd"
+vhdl work "Instruction_Decoder.vhd"
+vhdl work "ALU.vhd"
+vhdl work "CPU.vhd"

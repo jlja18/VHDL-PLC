@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Jonas\Aalborg Universitet\Jan Peter Mortensen Christiansen - P4\Arbejdsblade\Sjov med VHDL\PLCtest\PLC\ALU.ncd
+OUTFILE=C:\Users\Jonas\Aalborg Universitet\Jan Peter Mortensen Christiansen - P4\Arbejdsblade\Sjov med VHDL\PLCtest\PLC\ALU.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=C:\Users\Jonas\Aalborg Universitet\Jan Peter Mortensen Christiansen - P4\Arbejdsblade\Sjov med VHDL\PLCtest\PLC
+LICENSE=WebPack
+USER_INFO=211888858_0_0_551

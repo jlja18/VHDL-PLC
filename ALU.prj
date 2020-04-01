@@ -1,0 +1,3 @@
+vhdl work "InputSelectInvert.vhd"
+vhdl work "AluFunctionBlock.vhd"
+vhdl work "ALU.vhd"

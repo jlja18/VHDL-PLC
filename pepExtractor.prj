@@ -1,0 +1,5 @@
+work	"ALU.vhd"
+work	"AluFunctionBlock.vhd"
+work	"CPU.vhd"
+work	"InputSelectInvert.vhd"
+work	"Registers.vhd"

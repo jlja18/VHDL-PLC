@@ -1,0 +1,108 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml ALU.twx ALU.ncd -o ALU.twr ALU.pcf -ucf
+BPC3011-Papilio_Pro-general.ucf
+
+Design file:              ALU.ncd
+Physical constraint file: ALU.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+A<0>           |C<0>           |    9.745|
+A<0>           |C<1>           |    9.566|
+A<0>           |C<2>           |   10.474|
+A<0>           |C<3>           |   10.883|
+A<0>           |CarryOUT       |   11.196|
+A<1>           |C<1>           |    9.984|
+A<1>           |C<2>           |   10.759|
+A<1>           |C<3>           |   11.168|
+A<1>           |CarryOUT       |   11.481|
+A<2>           |C<2>           |   11.065|
+A<2>           |C<3>           |   11.080|
+A<2>           |CarryOUT       |   11.518|
+A<3>           |C<3>           |   11.153|
+A<3>           |CarryOUT       |   11.071|
+B<0>           |C<0>           |    8.911|
+B<0>           |C<1>           |    9.578|
+B<0>           |C<2>           |    9.273|
+B<0>           |C<3>           |    9.682|
+B<0>           |CarryOUT       |    9.995|
+B<1>           |C<1>           |    9.012|
+B<1>           |C<2>           |    9.278|
+B<1>           |C<3>           |    9.687|
+B<1>           |CarryOUT       |   10.000|
+B<2>           |C<2>           |    8.840|
+B<2>           |C<3>           |    9.252|
+B<2>           |CarryOUT       |    9.158|
+B<3>           |C<3>           |    9.318|
+B<3>           |CarryOUT       |    9.138|
+ENA            |C<0>           |   10.083|
+ENA            |C<1>           |   10.283|
+ENA            |C<2>           |   11.058|
+ENA            |C<3>           |   11.467|
+ENA            |CarryOUT       |   11.780|
+ENB            |C<0>           |    9.719|
+ENB            |C<1>           |   10.224|
+ENB            |C<2>           |   10.101|
+ENB            |C<3>           |   10.510|
+ENB            |CarryOUT       |   10.823|
+Fselect<0>     |C<0>           |    8.932|
+Fselect<0>     |C<1>           |    9.132|
+Fselect<0>     |C<2>           |    9.206|
+Fselect<0>     |C<3>           |    9.285|
+Fselect<1>     |C<0>           |    8.939|
+Fselect<1>     |C<1>           |    8.503|
+Fselect<1>     |C<2>           |    8.881|
+Fselect<1>     |C<3>           |    8.781|
+INC            |C<0>           |    9.260|
+INC            |C<1>           |   10.025|
+INC            |C<2>           |    9.352|
+INC            |C<3>           |    9.761|
+INC            |CarryOUT       |   10.074|
+INVA           |C<0>           |    9.463|
+INVA           |C<1>           |    9.663|
+INVA           |C<2>           |   10.438|
+INVA           |C<3>           |   10.847|
+INVA           |CarryOUT       |   11.160|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Mar 25 18:01:31 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4580 MB
+
+
+
