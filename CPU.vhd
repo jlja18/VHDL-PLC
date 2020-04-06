@@ -30,6 +30,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity CPU is
+	--Generic (BITHighIMPLow : STD_LOGIC_VECTOR :=  "LLLLLLLLLLLLLLLL" ); 
+	
     Port ( CLK : in  STD_LOGIC;
 		ting : out STD_LOGIC	 
 	 );
@@ -99,9 +101,6 @@ signal PCreaden : STD_LOGIC := '0';
 signal ALUControl : STD_LOGIC_VECTOR (5 downto 0); 
 
 begin
-A <= "LLLLLLLLLLLLLLLL"; 
-B <= "LLLLLLLLLLLLLLLL"; 
-C <= "LLLLLLLLLLLLLLLL"; 
 ALU1 : ALU port map(
 	Fselect => ALUControl(5 downto 4),
 	INVA => ALUControl(1),

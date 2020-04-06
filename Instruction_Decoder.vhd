@@ -66,7 +66,7 @@ begin
 				REGaddr1 <= cmd(9 downto 8); 
 				REGaddr2 <= cmd(1 downto 0); 
 				ALUControl <= "101000"; -- Load through a
-				RegBOutEN <= '1'; 
+				RegBOutEN <= '0'; 
 				RegAOutEN <= '0'; 
 				RegReadEN <= '1'; 
 				PROGoutEN <= '1'; 

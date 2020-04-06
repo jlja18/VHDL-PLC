@@ -110,3 +110,8 @@ xst -intstyle ise -ifn "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen C
 xst -intstyle ise -ifn "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/CPU.xst" -ofn "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/CPU.syr" 
 xst -intstyle ise -ifn "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/CPU.xst" -ofn "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/CPU.syr" 
 xst -intstyle ise -ifn "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/CPU.xst" -ofn "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/CPU.syr" 
+xst -intstyle ise -ifn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.xst" -ofn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.syr" 
+xst -intstyle ise -ifn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.xst" -ofn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.syr" 
+xst -intstyle ise -ifn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.xst" -ofn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.syr" 
+xst -intstyle ise -ifn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.xst" -ofn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.syr" 
+xst -intstyle ise -ifn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.xst" -ofn "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.syr" 
