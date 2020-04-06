@@ -34,8 +34,8 @@ entity Instruction_Decoder is
            ALUControl : out STD_LOGIC_VECTOR; 
            RegAOutEN : out  STD_LOGIC;
            RegBOutEN : out STD_LOGIC; 
-			  RegReadEN : out  STD_LOGIC;
-           REGaddr1 : out  STD_LOGIC_VECTOR (1 downto 0);
+			  REGwe : out STD_LOGIC_VECTOR (1 downto 0);
+			  REGaddr1 : out  STD_LOGIC_VECTOR (1 downto 0);
            REGaddr2 : out  STD_LOGIC_VECTOR (1 downto 0);
 			  PROGoutEn : out STD_LOGIC;
 			  PCReadEN : out STD_LOGIC); 
@@ -50,7 +50,7 @@ begin
 			when X"0" => 
 				RegAOutEN <= '0'; 
 				RegBOutEN <= '0'; 
-				RegReadEN <= '0'; 
+				REGwe <= "00"; 
 				PROGoutEN <= '0'; 
 				PCReadEN <= '0';
 			when X"1" => 
@@ -59,30 +59,30 @@ begin
 				ALUControl <= "001100"; -- function add and enable
 				RegAOutEN <= '1'; 
 				RegBOutEN <= '1'; 
-				RegReadEN <= '1'; 
+				REGwe <= "10"; 
 				ProgOUTEN <= '0'; 
 				PCReadEN <= '0';
 			when X"2" =>
 				REGaddr1 <= cmd(9 downto 8); 
 				REGaddr2 <= cmd(1 downto 0); 
-				ALUControl <= "101000"; -- Load through a
-				RegBOutEN <= '0'; 
+				ALUControl <= "001000"; -- Load through A
+				RegBOutEN <= '1'; 
 				RegAOutEN <= '0'; 
-				RegReadEN <= '1'; 
+				REGwe <= "10"; 
 				PROGoutEN <= '1'; 
 				PCReadEN <= '0';
 			when X"3" => --jump
 				REGaddr1 <= cmd(9 downto 8); 
-				ALUControl <= "101000"; 
+				ALUControl <= "001000"; 
 				RegBOutEN <= '0'; 
 				RegAOutEN <= '0'; 
-				RegReadEN <= '0'; 
+				REGwe <= "00"; 
 				PROGoutEN <= '1'; 
 				PCReadEN <= '1';
 			when others =>
 				RegAOutEN <= '0'; 
 				RegBOutEN <= '0'; 
-				RegReadEN <= '0'; 
+				REGwe <= "00"; 
 				PROGoutEN <= '0'; 
 				PCReadEN <= '0';
 			end case; 

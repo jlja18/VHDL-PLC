@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity ProgramStore is
-    Port ( INST : out  STD_LOGIC_VECTOR (23 downto 0);
+    Port ( INST : out  STD_LOGIC_VECTOR (31 downto 0);
            ADDR : in  STD_LOGIC_VECTOR (0 downto 0);
            ReadEnable : in  STD_LOGIC);
 end ProgramStore;

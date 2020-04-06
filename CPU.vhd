@@ -30,8 +30,6 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity CPU is
-	--Generic (BITHighIMPLow : STD_LOGIC_VECTOR :=  "LLLLLLLLLLLLLLLL" ); 
-	
     Port ( CLK : in  STD_LOGIC;
 		ting : out STD_LOGIC	 
 	 );
@@ -40,7 +38,7 @@ end CPU;
 architecture Behavioral of CPU is 
 type ram_type is array (0 to 63) of STD_LOGIC_VECTOR (7 downto 0);
 type program_mem is array (0 to 63) of STD_LOGIC_VECTOR (19 downto 0); 
-	    signal PROG : program_mem := (X"20005", X"20103", X"10001", X"00000", X"00000", X"00005", X"00000", X"00000",
+	    signal PROG : program_mem := (X"20005", X"20103", X"10001", X"30000", X"00000", X"00005", X"00000", X"00000",
                                       X"00000", X"00800", X"01000", X"00008", X"00009", X"00000", X"00000", X"00002",
                                       X"F000F", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000",
                                       X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000",
@@ -72,7 +70,8 @@ component Registers is
 			  dataout2 : out STD_LOGIC_VECTOR (15 downto 0);
 			  out1enable : in STD_LOGIC; 
 			  out2enable : in std_logic; 
-           we : in  STD_LOGIC);
+           we1 : in  STD_LOGIC;
+			  we2 : in STD_LOGIC);
 end component;
 
 component Instruction_Decoder is
@@ -80,7 +79,7 @@ component Instruction_Decoder is
            ALUControl : out STD_LOGIC_VECTOR(5 downto 0); 
            RegAOutEN : out  STD_LOGIC;
            RegBOutEN : out STD_LOGIC; 
-			  RegReadEN : out  STD_LOGIC;
+			  REGwe : out  STD_LOGIC_VECTOR (1 downto 0);
            REGaddr1 : out  STD_LOGIC_VECTOR (1 downto 0);
            REGaddr2 : out  STD_LOGIC_VECTOR (1 downto 0);
 			  PROGoutEn : out STD_LOGIC;
@@ -94,8 +93,8 @@ signal PC : STD_LOGIC_VECTOR(5 downto 0) := "000000";
 signal cmd : STD_LOGIC_VECTOR(19 downto 0) := X"00000"; 
 
 -- control signals
-signal addr1, addr2 : STD_LOGIC_VECTOR (1 downto 0) := "00"; 
-signal regwe, RegAOutEn, RegBOutEn: STD_LOGIC := '0'; 
+signal addr1, addr2, REGwe : STD_LOGIC_VECTOR (1 downto 0) := "00"; 
+signal RegAOutEn, RegBOutEn: STD_LOGIC := '0'; 
 signal progOutEN : STD_LOGIC := '0' ; 
 signal PCreaden : STD_LOGIC := '0'; 
 signal ALUControl : STD_LOGIC_VECTOR (5 downto 0); 
@@ -122,14 +121,15 @@ REGS : Registers port map(
 	dataout2 => B,
 	out1enable => RegAOutEn,
 	out2enable => RegBOutEn, 
-	we => regwe);
+	we1 => REGwe(1), 
+	we2 => REGwe(0));
 	
 IntstructionDcoder1 : Instruction_decoder port map(
 	cmd => cmd,
 	ALUControl => ALUControl,
 	RegAOutEN => RegAOutEN,
 	RegBOutEN => RegBOutEN, 
-	RegReadEN => regwe,
+	REGwe => REGwe,
 	REGaddr1 => addr1,
 	REGaddr2 => addr2,
 	ProgOutEn => ProgOutEn,
@@ -161,10 +161,12 @@ process(cmd, progOutEn)
 	begin
 	if (progOutEn = '1') then
 		A(3 downto 0) <= cmd(3 downto 0);
+		A(15 downto 4) <= X"000"; 
 	else 
 		A <= "ZZZZZZZZZZZZZZZZ"; 
 	end if; 
 	end process; 			
+
 
 	
 end Behavioral;

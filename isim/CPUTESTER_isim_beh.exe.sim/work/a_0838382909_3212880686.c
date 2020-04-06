@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/InputSelectInvert.vhd";
+static const char *ng0 = "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/InputSelectInvert.vhd";
 extern char *IEEE_P_2592010699;
 
 char *ieee_p_2592010699_sub_1837678034_503743352(char *, char *, char *, char *);
@@ -100,7 +100,7 @@ LAB24:    if (t1 != 0)
         goto LAB20;
 
 LAB21:    xsi_set_current_line(55, ng0);
-    t2 = (t0 + 6419);
+    t2 = (t0 + 5659);
     t6 = (t0 + 3552);
     t10 = (t6 + 56U);
     t11 = *((char **)t10);
@@ -118,7 +118,7 @@ LAB3:    xsi_set_current_line(58, ng0);
         goto LAB25;
 
 LAB27:    xsi_set_current_line(61, ng0);
-    t2 = (t0 + 6435);
+    t2 = (t0 + 5675);
     t6 = (t0 + 3616);
     t10 = (t6 + 56U);
     t11 = *((char **)t10);
@@ -134,7 +134,7 @@ LAB1:    return;
 LAB2:    xsi_set_current_line(47, ng0);
     t2 = (t0 + 1192U);
     t10 = *((char **)t2);
-    t2 = (t0 + 6280U);
+    t2 = (t0 + 5520U);
     t11 = ieee_p_2592010699_sub_1837678034_503743352(IEEE_P_2592010699, t9, t10, t2);
     t12 = (t9 + 12U);
     t13 = *((unsigned int *)t12);
@@ -182,7 +182,7 @@ LAB12:    t2 = (t0 + 1032U);
     goto LAB14;
 
 LAB15:    xsi_set_current_line(51, ng0);
-    t2 = (t0 + 6387);
+    t2 = (t0 + 5627);
     t11 = (t0 + 3552);
     t12 = (t11 + 56U);
     t16 = *((char **)t12);
@@ -200,7 +200,7 @@ LAB17:    t2 = (t0 + 1032U);
     goto LAB19;
 
 LAB20:    xsi_set_current_line(53, ng0);
-    t2 = (t0 + 6403);
+    t2 = (t0 + 5643);
     t11 = (t0 + 3552);
     t12 = (t11 + 56U);
     t16 = *((char **)t12);
