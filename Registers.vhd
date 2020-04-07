@@ -46,7 +46,7 @@ architecture Behavioral of Registers is
 type REGS is array (0 to 3) of STD_LOGIC_VECTOR (15 downto 0);  
 signal REG : REGS :=(X"0000", X"0000", X"0000", X"0000"); 
 begin
-process(we1, we2, datain, addr1, addr2, REG, clk)
+process(we1, we2, datain, addr1, addr2, REG, clk, out1Enable, out2Enable)
 begin
 	if (clk'event and clk = '0') then
 		if WE1 = '1' then 

@@ -49,10 +49,10 @@ begin
 	CarryOut <= tmp(16); 
 	
 with Fselect select 
-		RESULT <= tmp(15 downto 0) when "00", 
-		AIN and BIN when "01",
-		AIN or BIN when "10",
-		not BIN when "11",
+		RESULT <= tmp(15 downto 0) when "11", 
+		AIN and BIN when "00",
+		AIN or BIN when "01",
+		not BIN when "10",
 		X"0000" when others; 
 end Behavioral;
 

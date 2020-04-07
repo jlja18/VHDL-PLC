@@ -1,17 +1,20 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Mar 26 18:45:47 2020
+Tue Apr 07 10:27:01 2020
 
 drc -z CPU.ncd CPU.pcf
 
+WARNING:PhysDesignRules:372 - Gated clock. Clock net REGoutEN<0> is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   REGS/addr1[1]_addr1[1]_MUX_19_o is sourced by a combinatorial pin. This is
+   IntstructionDcoder1/Mram__n01143 is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   REGS/addr1[1]_addr1[1]_MUX_27_o is sourced by a combinatorial pin. This is
+   IntstructionDcoder1/Mram__n01147 is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
-DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+DRC detected 0 errors and 3 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

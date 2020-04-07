@@ -2,31 +2,28 @@ Command line:
    CPUTESTER_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  60498
+     -socket  57948
 
-Mon Apr 06 12:33:31 2020
+Tue Apr 07 15:58:10 2020
 
 
  Elaboration Time: 0.03125 sec
 
- Current Memory Usage: 4700.12 Meg
+ Current Memory Usage: 4700.08 Meg
 
- Total Signals          : 68
- Total Nets             : 2016
- Total Signal Drivers   : 23
- Total Blocks           : 10
- Total Primitive Blocks : 7
- Total Processes        : 12
- Total Traceable Variables  : 11
- Total Scalar Nets and Variables : 2395
-Total Line Count : 82
-Total Line Count : 82
-Total Line Count : 82
-Total Line Count : 82
+ Total Signals          : 82
+ Total Nets             : 1312
+ Total Signal Drivers   : 27
+ Total Blocks           : 11
+ Total Primitive Blocks : 8
+ Total Processes        : 13
+ Total Traceable Variables  : 27
+ Total Scalar Nets and Variables : 1787
+Total Line Count : 93
 
- Total Simulation Time: 0.28125 sec
+ Total Simulation Time: 0.046875 sec
 
- Current Memory Usage: 4700.14 Meg
+ Current Memory Usage: 4700.09 Meg
 
-Mon Apr 06 12:43:19 2020
+Tue Apr 07 15:58:16 2020
 

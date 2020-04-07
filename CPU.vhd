@@ -36,17 +36,6 @@ entity CPU is
 end CPU;
 
 architecture Behavioral of CPU is 
-type ram_type is array (0 to 63) of STD_LOGIC_VECTOR (7 downto 0);
-type program_mem is array (0 to 63) of STD_LOGIC_VECTOR (19 downto 0); 
-	    signal PROG : program_mem := (X"20005", X"20103", X"10001", X"30000", X"00000", X"00005", X"00000", X"00000",
-                                      X"00000", X"00800", X"01000", X"00008", X"00009", X"00000", X"00000", X"00002",
-                                      X"F000F", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000",
-                                      X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000",
-                                      X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000",
-                                      X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000",
-                                      X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000",
-                                      X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000", X"00000");
-	signal MEM : ram_type; 
 
 component ALU is
     Port ( Fselect : in  STD_LOGIC_VECTOR (1 downto 0);
@@ -75,10 +64,14 @@ component Registers is
 end component;
 
 component Instruction_Decoder is
-    Port ( CMD : in  STD_LOGIC_VECTOR (19 downto 0);
+    Port ( CLK : in STD_LOGIC; 
+			  CMD : in  STD_LOGIC_VECTOR (15 downto 0);
+			  ARG1 : in STD_LOGIC_VECTOR (15 downto 0); 
+			  ARG2 : in STD_LOGIC_VECTOR (15 downto 0); 
+			  ARG3 : in STD_LOGIC_VECTOR (15 downto 0); 
+			  PCINC : out STD_LOGIC_VECTOR (1 downto 0); 
            ALUControl : out STD_LOGIC_VECTOR(5 downto 0); 
-           RegAOutEN : out  STD_LOGIC;
-           RegBOutEN : out STD_LOGIC; 
+			  RegOutEN : out STD_LOGIC_VECTOR(1 downto 0); 
 			  REGwe : out  STD_LOGIC_VECTOR (1 downto 0);
            REGaddr1 : out  STD_LOGIC_VECTOR (1 downto 0);
            REGaddr2 : out  STD_LOGIC_VECTOR (1 downto 0);
@@ -86,15 +79,24 @@ component Instruction_Decoder is
 			  PCReadEN : out STD_LOGIC); 
 end component;
 
-signal start : std_logic := '0'; 
+component ProgramStore is 
+	    Port ( INST : out  STD_LOGIC_VECTOR (15 downto 0);
+			  ARG1 : out STD_LOGIC_VECTOR (15 downto 0); 
+			  ARG2 : out STD_LOGIC_VECTOR (15 downto 0); 
+			  ARG3 : out STD_LOGIC_VECTOR (15 downto 0); 
+           ADDR : in  STD_LOGIC_VECTOR (5 downto 0);
+           WE : in  STD_LOGIC);
+end component; 
+
+signal start : STD_LOGIC_VECTOR (1 downto 0):= "00"; 
 
 signal A, B, C : STD_LOGIC_VECTOR (15 downto 0) := X"0000"; 
 signal PC : STD_LOGIC_VECTOR(5 downto 0) := "000000";
-signal cmd : STD_LOGIC_VECTOR(19 downto 0) := X"00000"; 
+signal cmd, INST, ARG1, ARG2, ARG3 : STD_LOGIC_VECTOR (15 downto 0); 
 
 -- control signals
 signal addr1, addr2, REGwe : STD_LOGIC_VECTOR (1 downto 0) := "00"; 
-signal RegAOutEn, RegBOutEn: STD_LOGIC := '0'; 
+signal REGoutEN, PCINC : STD_LOGIC_VECTOR (1 downto 0) := "00"; 
 signal progOutEN : STD_LOGIC := '0' ; 
 signal PCreaden : STD_LOGIC := '0'; 
 signal ALUControl : STD_LOGIC_VECTOR (5 downto 0); 
@@ -119,49 +121,67 @@ REGS : Registers port map(
 	datain => C,
 	dataout1 => A,
 	dataout2 => B,
-	out1enable => RegAOutEn,
-	out2enable => RegBOutEn, 
+	out1enable => REGoutEN(1),
+	out2enable => REGoutEN(0), 
 	we1 => REGwe(1), 
 	we2 => REGwe(0));
 	
 IntstructionDcoder1 : Instruction_decoder port map(
-	cmd => cmd,
+	CLK => CLK,
+	CMD => CMD,
+	ARG1 => ARG1,
+	ARG2 => ARG2,
+	ARG3 => ARG3, 
 	ALUControl => ALUControl,
-	RegAOutEN => RegAOutEN,
-	RegBOutEN => RegBOutEN, 
+	REGoutEN => REGoutEN, 
 	REGwe => REGwe,
 	REGaddr1 => addr1,
 	REGaddr2 => addr2,
 	ProgOutEn => ProgOutEn,
+	PCINC => PCINC,
 	PCreaden => PCreaden); 
 
-process(clk, start, PROG)
+PROG1 : ProgramStore port map(
+	INST => INST,  
+	ARG1 => ARG1,
+	ARG2 => ARG2,
+	ARG3 => ARG3,
+	ADDR => PC,
+	WE => '1'
+); 
+
+
+
+
+
+
+
+
+process(clk, start, PCINC, INST)
 	begin
 		if(clk'event and clk = '1') then
-			if start = '1' then
+			if start = "11" then
 				if (PCReadEN = '1') then
 					PC <= C(5 downto 0);
 				else 
-					pc <= pc + 1 ;
+					PC <= PC + 1 + PCINC; 
 				end if; 
-			else 
-				start <= '1'; 
-				PC <= PC; 
-			end if; 
-
-		   if start = '0' then 
-				cmd <= X"00000"; 
-			else 
-				cmd <= PROG(conv_integer(PC)); 
+				
+				else 
+					cmd <= INST; 
+					start <= "11"; 
 			end if; 
 		end if; 
+		if start = "11" then 
+			cmd <= INST; 
+		end if;
+				
 end process; 
 
-process(cmd, progOutEn)
+process(progOutEn, ARG1)
 	begin
 	if (progOutEn = '1') then
-		A(3 downto 0) <= cmd(3 downto 0);
-		A(15 downto 4) <= X"000"; 
+		A(15 downto 0) <= ARG1;
 	else 
 		A <= "ZZZZZZZZZZZZZZZZ"; 
 	end if; 

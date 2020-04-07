@@ -53,6 +53,7 @@ architecture Behavioral of ALU is
 				  BOUT : out  STD_LOGIC_VECTOR (15 downto 0);
 				  AOUT : out  STD_LOGIC_VECTOR (15 downto 0));
 	end component;
+	
 	component AluFunctionBlock is
     Port ( AIN : in  STD_LOGIC_VECTOR (15 downto 0);
            BIN : in  STD_LOGIC_VECTOR (15 downto 0);

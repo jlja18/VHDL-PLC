@@ -1,4 +1,4 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPUTESTER_isim_beh.exe -prj C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPUTESTER_beh.prj work.CPUTESTER 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/TESTCPU_isim_beh.exe" -prj "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/TESTCPU_beh.prj" "work.TESTCPU" 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 16
 Turning on mult-threading, number of parallel sub-compilation jobs: 32 
@@ -6,10 +6,11 @@ Determining compilation order of HDL files
 Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/InputSelectInvert.vhd" into library work
 Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/AluFunctionBlock.vhd" into library work
 Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/Registers.vhd" into library work
+Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/ProgramStore.vhd" into library work
 Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/Instruction_Decoder.vhd" into library work
 Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/ALU.vhd" into library work
 Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPU.vhd" into library work
-Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPUTESTER.vhd" into library work
+Parsing VHDL file "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/TESTCPU.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -20,12 +21,12 @@ Compiling architecture behavioral of entity InputSelectInvert [inputselectinvert
 Compiling architecture behavioral of entity AluFunctionBlock [alufunctionblock_default]
 Compiling architecture behavioral of entity ALU [alu_default]
 Compiling architecture behavioral of entity Registers [registers_default]
-Compiling architecture behavioral of entity Instruction_Decoder [\Instruction_Decoder(5,0)\]
+Compiling architecture behavioral of entity Instruction_Decoder [\Instruction_Decoder(('0','1','1...]
+Compiling architecture behavioral of entity ProgramStore [programstore_default]
 Compiling architecture behavioral of entity CPU [cpu_default]
-Compiling architecture behavior of entity cputester
+Compiling architecture behavior of entity testcpu
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 17 VHDL Units
-Built simulation executable C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPUTESTER_isim_beh.exe
-Fuse Memory Usage: 35936 KB
-Fuse CPU Usage: 421 ms
+Compiled 19 VHDL Units
+Built simulation executable C:/Users/Jonas/Desktop/PLC/VHDL-PLC/TESTCPU_isim_beh.exe
+Fuse Memory Usage: 35696 KB
+Fuse CPU Usage: 499 ms

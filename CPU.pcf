@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Mar 26 18:45:30 2020
+// Written by: Map P.20131013 on Tue Apr 07 16:02:25 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -7,6 +7,6 @@ PROHIBIT = SITE "P144";
 PROHIBIT = SITE "P69";
 PROHIBIT = SITE "P60";
 COMP "CLK" LOCATE = SITE "P94" LEVEL 1;
-NET "CLK_BUFGP/IBUFG" PERIOD = 31.25 ns HIGH 50%;
+NET "CLK_IBUF" PERIOD = 31.25 ns HIGH 50%;
 SCHEMATIC END;
 

@@ -1,5 +1,5 @@
-set -tmpdir "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/xst"
+set -tmpdir "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/xst"
 run -compileonly yes
 -p xc6slx9-2-tqg144
 -top AluFunctionBlock

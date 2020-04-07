@@ -1,0 +1,30 @@
+Command line:
+   CPUTESTER_isim_translate.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  57953
+
+Tue Apr 07 15:58:45 2020
+
+
+ Elaboration Time: 0.015625 sec
+
+ Current Memory Usage: 4700.56 Meg
+
+ Total Signals          : 2
+ Total Nets             : 2
+ Total Signal Drivers   : 1
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 2
+ Total Traceable Variables  : 9
+ Total Scalar Nets and Variables : 363
+Total Line Count : 7
+Total Line Count : 7
+
+ Total Simulation Time: 0.015625 sec
+
+ Current Memory Usage: 4700.56 Meg
+
+Tue Apr 07 15:58:51 2020
+

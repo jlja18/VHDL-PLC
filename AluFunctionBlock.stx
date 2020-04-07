@@ -1,16 +1,16 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/Users/Jonas/Desktop/PLC/VHDL-PLC/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.11 secs
  
---> Parameter xsthdpdir set to C:/Users/Jonas/Aalborg Universitet/Jan Peter Mortensen Christiansen - P4/Arbejdsblade/Sjov med VHDL/PLCtest/PLC/xst
+--> Parameter xsthdpdir set to C:/Users/Jonas/Desktop/PLC/VHDL-PLC/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: AluFunctionBlock.prj
 
@@ -39,13 +39,13 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Jonas\Aalborg Universitet\Jan Peter Mortensen Christiansen - P4\Arbejdsblade\Sjov med VHDL\PLCtest\PLC\AluFunctionBlock.vhd" into library work
+Parsing VHDL file "C:\Users\Jonas\Desktop\PLC\VHDL-PLC\AluFunctionBlock.vhd" into library work
 Parsing entity <AluFunctionBlock>.
 Parsing architecture <Behavioral> of entity <alufunctionblock>.
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.84 secs
+Total CPU time to Xst completion: 2.81 secs
  
 --> 
 

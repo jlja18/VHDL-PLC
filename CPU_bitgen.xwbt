@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\Jonas\Aalborg Universitet\Jan Peter Mortensen Christiansen - P4\Arbejdsblade\Sjov med VHDL\PLCtest\PLC\CPU.ncd
-OUTFILE=C:\Users\Jonas\Aalborg Universitet\Jan Peter Mortensen Christiansen - P4\Arbejdsblade\Sjov med VHDL\PLCtest\PLC\CPU.bit
+INFILE=C:\Users\Jonas\Desktop\PLC\VHDL-PLC\CPU.ncd
+OUTFILE=C:\Users\Jonas\Desktop\PLC\VHDL-PLC\CPU.bit
 FAMILY=Spartan6
 PART=xc6slx9-2tqg144
-WORKINGDIR=C:\Users\Jonas\Aalborg Universitet\Jan Peter Mortensen Christiansen - P4\Arbejdsblade\Sjov med VHDL\PLCtest\PLC
+WORKINGDIR=C:\Users\Jonas\Desktop\PLC\VHDL-PLC
 LICENSE=WebPack
 USER_INFO=211888858_0_0_551

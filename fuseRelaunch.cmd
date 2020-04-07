@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPUTESTER_isim_beh.exe" -prj "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/CPUTESTER_beh.prj" "work.CPUTESTER" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/TESTCPU_isim_beh.exe" -prj "C:/Users/Jonas/Desktop/PLC/VHDL-PLC/TESTCPU_beh.prj" "work.TESTCPU" 
