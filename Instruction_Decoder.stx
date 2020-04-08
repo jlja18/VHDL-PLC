@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/Jonas/Desktop/PLC/VHDL-PLC/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to C:/Users/Jonas/Desktop/PLC/VHDL-PLC/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: Instruction_Decoder.prj
 
@@ -44,8 +44,8 @@ Parsing entity <Instruction_Decoder>.
 Parsing architecture <Behavioral> of entity <instruction_decoder>.
 
 
-Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.86 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 2.81 secs
  
 --> 
 

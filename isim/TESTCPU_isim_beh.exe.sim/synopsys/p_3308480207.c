@@ -25,7 +25,7 @@
 
 
 
-extern void work_a_0832606739_3212880686_init()
+extern void synopsys_p_3308480207_init()
 {
-	xsi_register_didat("work_a_0832606739_3212880686", "isim/CPUTESTER_isim_beh.exe.sim/work/a_0832606739_3212880686.didat");
+	xsi_register_didat("synopsys_p_3308480207", "isim/TESTCPU_isim_beh.exe.sim/synopsys/p_3308480207.didat");
 }

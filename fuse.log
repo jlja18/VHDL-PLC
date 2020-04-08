@@ -17,6 +17,8 @@ Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
+Compiling package attributes
+Compiling package std_logic_misc
 Compiling architecture behavioral of entity InputSelectInvert [inputselectinvert_default]
 Compiling architecture behavioral of entity AluFunctionBlock [alufunctionblock_default]
 Compiling architecture behavioral of entity ALU [alu_default]
@@ -26,7 +28,8 @@ Compiling architecture behavioral of entity ProgramStore [programstore_default]
 Compiling architecture behavioral of entity CPU [cpu_default]
 Compiling architecture behavior of entity testcpu
 Time Resolution for simulation is 1ps.
-Compiled 19 VHDL Units
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 21 VHDL Units
 Built simulation executable C:/Users/Jonas/Desktop/PLC/VHDL-PLC/TESTCPU_isim_beh.exe
-Fuse Memory Usage: 35696 KB
-Fuse CPU Usage: 499 ms
+Fuse Memory Usage: 36112 KB
+Fuse CPU Usage: 608 ms

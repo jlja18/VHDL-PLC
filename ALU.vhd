@@ -20,7 +20,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
-
+use ieee.std_logic_misc.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -40,7 +40,8 @@ entity ALU is
            C : out  STD_LOGIC_VECTOR (15 downto 0);
 			  INC : in STD_LOGIC; 
            CarryOUT : out  STD_LOGIC;
-           CarryIN : in  STD_LOGIC);
+           CarryIN : in  STD_LOGIC;
+			  ISZERO : out STD_LOGIC);
 end ALU;
 
 architecture Behavioral of ALU is
@@ -64,12 +65,10 @@ architecture Behavioral of ALU is
 			  );
 	end component;
 
-	signal AOUT, BOUT : STD_LOGIC_VECTOR (15 downto 0);  
-	
+	signal AOUT, BOUT, CIN : STD_LOGIC_VECTOR (15 downto 0);  
 	
 begin
-
-
+	C <= CIN; 
 	Selecter1 : InputSelectInvert port map(
 		A => A, 
 		B => B, 
@@ -84,8 +83,10 @@ begin
 		BIN => BOUT,
 		INC => INC,
 		CarryOUT => CarryOUT, 
-		RESULT => C,
+		RESULT => CIN,
 		Fselect => Fselect); 
+		
+ISZERO <=  not or_reduce(CIN);  
 							
 end Behavioral;
 

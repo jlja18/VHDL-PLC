@@ -41,7 +41,7 @@ end ProgramStore;
 
 architecture Behavioral of ProgramStore is
 		type ram_type is array (0 to 63) of STD_LOGIC_VECTOR (15 downto 0);
-		signal PROG : ram_type := (X"0002", X"0008", X"0000", X"0002", X"0005", X"0001", X"0001", X"0000", X"0001", X"0003", X"0006",others => X"0000");
+		signal PROG : ram_type := (X"0002", X"000D", X"0002", X"0002", X"0008", X"0000", X"0002", X"0005", X"0001", X"0001", X"0000", X"0001", X"0004", X"000C", X"0002", X"0000", X"0003", X"0009",others => X"0000");
 begin
 	process(ADDR, WE)
 	begin 

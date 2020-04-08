@@ -47,7 +47,8 @@ component ALU is
            C : out  STD_LOGIC_VECTOR (15 downto 0);
 			  INC : in STD_LOGIC; 
            CarryOUT : out  STD_LOGIC;
-           CarryIN : in  STD_LOGIC);
+           CarryIN : in  STD_LOGIC;
+			  ISZERO : out STD_LOGIC);
 end component;
 
 component Registers is
@@ -76,7 +77,7 @@ component Instruction_Decoder is
            REGaddr1 : out  STD_LOGIC_VECTOR (1 downto 0);
            REGaddr2 : out  STD_LOGIC_VECTOR (1 downto 0);
 			  PROGoutEn : out STD_LOGIC;
-			  PCReadEN : out STD_LOGIC); 
+			  JUMP : out STD_LOGIC_VECTOR(1 downto 0)); 
 end component;
 
 component ProgramStore is 
@@ -88,7 +89,7 @@ component ProgramStore is
            WE : in  STD_LOGIC);
 end component; 
 
-signal start : STD_LOGIC_VECTOR (1 downto 0):= "00"; 
+signal start, JUMP : STD_LOGIC_VECTOR (1 downto 0):= "00"; 
 
 signal A, B, C : STD_LOGIC_VECTOR (15 downto 0) := X"0000"; 
 signal PC : STD_LOGIC_VECTOR(5 downto 0) := "000000";
@@ -97,7 +98,7 @@ signal cmd, INST, ARG1, ARG2, ARG3 : STD_LOGIC_VECTOR (15 downto 0);
 -- control signals
 signal addr1, addr2, REGwe : STD_LOGIC_VECTOR (1 downto 0) := "00"; 
 signal REGoutEN, PCINC : STD_LOGIC_VECTOR (1 downto 0) := "00"; 
-signal progOutEN : STD_LOGIC := '0' ; 
+signal progOutEN, ISZERO : STD_LOGIC := '0' ; 
 signal PCreaden : STD_LOGIC := '0'; 
 signal ALUControl : STD_LOGIC_VECTOR (5 downto 0); 
 
@@ -112,7 +113,8 @@ ALU1 : ALU port map(
 	C => C,
 	INC => ALUControl(0), 
 	CarryIN => '0',
-	CarryOut => ting);
+	CarryOut => ting,
+	ISZERO => ISZERO);
 	
 REGS : Registers port map(
 	clk => clk, 
@@ -139,7 +141,7 @@ IntstructionDcoder1 : Instruction_decoder port map(
 	REGaddr2 => addr2,
 	ProgOutEn => ProgOutEn,
 	PCINC => PCINC,
-	PCreaden => PCreaden); 
+	JUMP => JUMP); 
 
 PROG1 : ProgramStore port map(
 	INST => INST,  
@@ -151,18 +153,12 @@ PROG1 : ProgramStore port map(
 ); 
 
 
-
-
-
-
-
-
 process(clk, start, PCINC, INST)
 	begin
 		if(clk'event and clk = '1') then
 			if start = "11" then
-				if (PCReadEN = '1') then
-					PC <= C(5 downto 0);
+				if ((JUMP = "01") or (JUMP = "10" and ISZERO = '1') ) then
+					PC <= ARG1(5 downto 0);
 				else 
 					PC <= PC + 1 + PCINC; 
 				end if; 
@@ -178,21 +174,12 @@ process(clk, start, PCINC, INST)
 				
 end process; 
 
-process(progOutEn, ARG1)
-	begin
-	if (progOutEn = '1') then
+process(progOutEn, ARG1, JUMP)
+begin
+	if (progOutEn = '1' ) then
 		A(15 downto 0) <= ARG1;
 	else 
 		A <= "ZZZZZZZZZZZZZZZZ"; 
 	end if; 
-	end process; 			
-
-
-	
+end process; 			
 end Behavioral;
-
-
-
-
-
-
